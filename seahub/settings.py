@@ -902,6 +902,9 @@ if ENABLE_REMOTE_USER_AUTHENTICATION:
 if ENABLE_OAUTH or ENABLE_WORK_WEIXIN or ENABLE_WEIXIN or ENABLE_DINGTALK:
     AUTHENTICATION_BACKENDS += ('seahub.oauth.backends.OauthRemoteUserBackend',)
 
+if USE_CAS_API_LOGIN:
+    AUTHENTICATION_BACKENDS = ('seahub.base.accounts.ShenHangCASAPIBackend',)
+
 #####################
 # Custom Nav Items  #
 #####################
